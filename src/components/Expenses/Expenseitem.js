@@ -28,8 +28,8 @@ const ExpenseItem = (props) => {
         <ExpenseAmountTitle amount={amount} />
       </div>
       <button onClick={clickHandler}>Change Title</button>
-      <button>Delete Expense</button>
-      <button onClick={changeAmountClickHandler}>Change amount</button>
+      {/*<button>Delete Expense</button>
+      <button onClick={changeAmountClickHandler}>Change amount</button>*/}
     </Card>
   );
 };
