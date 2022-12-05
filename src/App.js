@@ -1,5 +1,8 @@
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
+import "./components/UI/card.css";
+import { useEffect, useState } from "react";
+import ExpensesFilter from "./components/Expenses/ExpenseFilter";
 
 const App = () => {
   const expenses = [
@@ -28,19 +31,17 @@ const App = () => {
       date: new Date(2021, 5, 12),
     },
   ];
-  
-  const addExpenseHandler = (expens) => {
-    //console.log(expense);
-    expenses.push(expens);
-console.log(expenses);
+  const [array, setArray] = useState(expenses);
 
-  
+  const addExpenseHandler = (expens) => {
+    setArray([...array, expens]);
   };
 
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses expenses={expenses} />
+      <ExpensesFilter></ExpensesFilter>
+      <Expenses expenses={array} />
     </div>
   );
 };
