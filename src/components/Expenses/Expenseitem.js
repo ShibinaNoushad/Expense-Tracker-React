@@ -12,12 +12,12 @@ const ExpenseItem = (props) => {
     setTitle("Updated!");
     console.log(title);
   };
-  const[amount,setAmount]=useState(props.amount)
-  const changeAmountClickHandler=()=>{
-    setAmount('100$');
-    console.log(amount);
 
-  }
+  const [amount, setAmount] = useState(props.amount);
+  const changeAmountClickHandler = () => {
+    setAmount("100$");
+    console.log(amount);
+  };
 
   return (
     <Card className="expense-item">

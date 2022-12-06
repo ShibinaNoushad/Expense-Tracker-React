@@ -7,6 +7,7 @@ const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
+
   const submitHandler = (e) => {
     e.preventDefault();
     const expenseData = {
@@ -15,15 +16,13 @@ const ExpenseForm = (props) => {
       date: new Date(enteredDate),
     };
     props.onSaveExpenseData(expenseData);
-    setEnteredTitle('');
-    setEnteredAmount('');
-    setEnteredDate('')
+    setEnteredTitle("");
+    setEnteredAmount("");
+    setEnteredDate("");
   };
 
-  
-    const titleChangeHandler = (event) => {
-
-     setEnteredTitle(event.target.value);
+  const titleChangeHandler = (event) => {
+    setEnteredTitle(event.target.value);
   };
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
@@ -31,14 +30,17 @@ const ExpenseForm = (props) => {
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
   };
-  
 
   return (
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" value={enteredTitle} onChange={titleChangeHandler} />
+          <input
+            type="text"
+            value={enteredTitle}
+            onChange={titleChangeHandler}
+          />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
