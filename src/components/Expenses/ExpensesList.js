@@ -25,21 +25,3 @@ const ExpensesList = (props) => {
 
 export default ExpensesList;
 
-// import React from "react";
-// import ExpenseItem from "./Expenseitem";
-// import "./ExpensesList.css";
-
-// const ExpensesList = (props) => {
-//   let expenseContent = <p>No Expense Found</p>;
-//   if (props.items.length > 0) {
-//     expenseContent = props.items.map((ele) => (
-//       <ExpenseItem
-//         title={ele.title}
-//         amount={ele.amount}
-//         date={ele.date}
-//         key={ele.id}
-//       />
-//     ));
-//   }
-// };
-// export default ExpensesList;
