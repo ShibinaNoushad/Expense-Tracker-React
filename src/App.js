@@ -30,19 +30,19 @@ const dummyExpenses = [
 ];
 
 const App = () => {
-  const [expenses, setArray] = useState(dummyExpenses);
+  const [data, setArray] = useState(dummyExpenses);
 
-  const addExpenseHandler = (expens) => {
+  const addExpenseHandler = (receivedexpens) => {
     //setArray([...array, expens]);
     setArray((prevExpense) => {
-      return [expens, ...prevExpense];
+      return [receivedexpens, ...prevExpense];
     });
   };
 
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses expenses={expenses} />
+      <Expenses expenses={data} />
     </div>
   );
 };
